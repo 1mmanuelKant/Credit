@@ -1,10 +1,12 @@
 const infos = (() => {
   const NUMBER = document.querySelector('#number')
   const NAME = document.querySelector('#name')
+  const YEAR = document.querySelector('#year')
+  const MONTH = document.querySelector('#month')
   const NUMBER_ARRAY = []
   const NAME_ARRAY = [];
 
-  return { NUMBER, NUMBER_ARRAY, NAME, NAME_ARRAY }
+  return { NUMBER, NUMBER_ARRAY, NAME, NAME_ARRAY, YEAR, MONTH }
 })()
 
 const creditNumber = () => {
@@ -77,8 +79,15 @@ const creditName = () => {
       creditSpan.innerText = infos.NAME_ARRAY.join('');
       console.log(infos.NAME_ARRAY.length);
     }
-    console.log(e);
   })
+}
+
+const creditExpiration = () => {
+  const spanDate = document.querySelector('.cdate')
+
+  spanDate.innerText = infos.MONTH.value + '/' + infos.YEAR.value;
+  console.log(infos.MONTH.value);
+  console.log(infos.YEAR.value);
 }
 
 creditNumber()

@@ -1,31 +1,39 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
-  font-family: "Amazon Ember", Arial,sans-serif;
+body {
+  font-family: 'Amazon Ember', Arial, sans-serif;
 }
 
-#number input{
+#number input {
   user-select: none;
 }
 
-.card-name{
+.credit-card span {
   position: absolute;
 
-  left: 50px;
-  top: 360px;
-
   font-family: 'OCR A Extended', sans-serif;
-  text-transform: uppercase;
 
   font-weight: 700;
   color: silver;
 }
 
-.credit-card-container{
+.card-name {
+  text-transform: uppercase;
+
+  left: 50px;
+  top: 360px;
+}
+
+.cdate {
+  left: 280px;
+  top: 420px;
+}
+
+.credit-card-container {
   display: flex;
   flex-flow: column wrap;
 
@@ -35,10 +43,10 @@ body{
 
   margin-left: 1.5rem;
 }
-.credit-card-container h2{
-  background: linear-gradient(to bottom,#f7f7f7,#eaeaea);
+.credit-card-container h2 {
+  background: linear-gradient(to bottom, #f7f7f7, #eaeaea);
 
-  padding: 1rem 1rem; 
+  padding: 1rem 1rem;
 
   font-size: 1rem;
 
@@ -48,24 +56,24 @@ body{
   box-shadow: 0 0 14px 0 rgb(15 17 17 / 50%);
 }
 
-.credit-card-container label{
+.credit-card-container label {
   width: 7.75rem;
   font-size: 0.875rem;
   font-weight: 700;
 }
 
-.credit-card-container input{
+.credit-card-container input {
   outline-style: hidden;
   outline-color: rgba(0, 0, 0, 0.4);
-  
+
   height: 1.9375rem;
 }
 
-.acceptable-cards{
+.acceptable-cards {
   display: flex;
 }
 
-.infos-container{
+.infos-container {
   display: flex;
   flex-flow: column wrap;
 
@@ -74,55 +82,60 @@ body{
   width: 25rem;
 }
 
-.number{
+.number {
   display: flex;
 
   gap: 0.5rem;
 }
 
-.credit-card-name{
+.credit-card-name {
   display: flex;
 
   gap: 0.5rem;
 }
 
-.expiration-date{
+.expiration-date {
   display: flex;
 
   gap: 0.5rem;
 }
 
-.expiration-date input{
+.expiration-date input {
   width: 10.8125rem;
 }
 
-.span-row .flags-row  {
-  height: 200px;
-}
-.span-row .flags-row span{
-  background-image: url(https://images-na.ssl-images-amazon.com/images/G/32/payments-portal/r1/issuer-images/sprite-map._CB624832397_.png);
+.span-row .flags-row {
+  display: flex;
 
-  height: 200px;
-  width: 100px;
+  flex-flow: column wrap;
+  gap: 3rem;
 
-  background-position: -90px;
+  align-items: center;
 }
 
-.flag{
+.flags-row p {
+  font-weight: 600;
+}
+
+.flags-row img {
+  width: 184px;
+}
+
+.flag {
   position: absolute;
   visibility: hidden;
-  
+
   top: 390px;
   left: 60px;
 }
 
-.visa{
+.visa {
   visibility: visible;
   height: 66px;
   width: 72px;
 }
 
-.mastercard{
+.mastercard {
   visibility: visible;
 
   border: 0;
@@ -132,7 +145,7 @@ body{
   width: 77px;
 }
 
-.amex{
+.amex {
   visibility: visible;
   height: 66px;
   width: 72px;
