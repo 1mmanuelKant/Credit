@@ -1,22 +1,21 @@
 const infos = (() => {
-  const NUMBER = document.querySelector('#number')
-  const NAME = document.querySelector('#name')
-  const YEAR = document.querySelector('#year')
-  const MONTH = document.querySelector('#month')
-  const NUMBER_ARRAY = []
+  const NUMBER = document.querySelector('#number');
+  const NAME = document.querySelector('#name');
+  const YEAR = document.querySelector('#year');
+  const MONTH = document.querySelector('#month');
+  const NUMBER_ARRAY = [];
   const NAME_ARRAY = [];
 
   return { NUMBER, NUMBER_ARRAY, NAME, NAME_ARRAY, YEAR, MONTH }
 })()
 
 const creditNumber = () => {
-  const flag = document.querySelector('.flag')
-  const array = infos.NUMBER_ARRAY
+  const flag = document.querySelector('.flag');
+  const array = infos.NUMBER_ARRAY;
 
   infos.NUMBER.addEventListener('input', e => {
     if (e.data !== null) {
-      infos.NUMBER_ARRAY.push(e)
-      console.log('teste22222')
+      infos.NUMBER_ARRAY.push(e);
     }
     if (array[0] && array[1]) {
       if (
@@ -27,8 +26,8 @@ const creditNumber = () => {
           Number(array[1].data) === 4 ||
           Number(array[1].data) === 5)
       ) {
-        flag.setAttribute('src', './assets/mc.png')
-        flag.classList.add('mastercard')
+        flag.setAttribute('src', './assets/mc.png');
+        flag.classList.add('mastercard');
       }
     }
     if (array[0] && array[1]) {
@@ -36,31 +35,30 @@ const creditNumber = () => {
         Number(array[0].data) === 3 &&
         (Number(array[1].data) === 4 || Number(array[1].data) === 7)
       ) {
-        flag.setAttribute('src', './assets/amex.png')
-        flag.classList.add('amex')
+        flag.setAttribute('src', './assets/amex.png');
+        flag.classList.add('amex');
       }
     }
     if (array[0] && array[1]) {
       if (Number(array[0].data) === 4) {
-        flag.setAttribute('src', './assets/visa.png')
-        flag.classList.add('visa')
+        flag.setAttribute('src', './assets/visa.png');
+        flag.classList.add('visa');
       }
     }
-    console.log(infos.NUMBER_ARRAY.length)
   })
   infos.NUMBER.addEventListener('keydown', evento => {
-    const key = evento.key
+    const key = evento.key;
     if (key === 'Backspace') {
       if (infos.NUMBER_ARRAY.length > 0) {
-        infos.NUMBER_ARRAY.length = infos.NUMBER_ARRAY.length - 1
+        infos.NUMBER_ARRAY.length = infos.NUMBER_ARRAY.length - 1;
       }
 
       console.log(infos.NUMBER_ARRAY.length);
 
-      flag.setAttribute('src', '')
-      flag.classList.remove('mastercard')
-      flag.classList.remove('amex')
-      flag.classList.remove('visa')
+      flag.setAttribute('src', '');
+      flag.classList.remove('mastercard');
+      flag.classList.remove('amex');
+      flag.classList.remove('visa');
     }
   })
 }
@@ -69,12 +67,12 @@ const creditName = () => {
   infos.NAME.addEventListener('input', (e) => {
     const creditSpan = document.querySelector('.cname');
     
-    if(e.data !== null){
+    if (e.data !== null) {
       infos.NAME_ARRAY.push(e.data);
       creditSpan.classList.add('card-name');
       creditSpan.innerText = infos.NAME_ARRAY.join('');
     }
-    if(e.data === null){
+    if (e.data === null) {
       infos.NAME_ARRAY.length = infos.NAME_ARRAY.length - 1;
       creditSpan.innerText = infos.NAME_ARRAY.join('');
       console.log(infos.NAME_ARRAY.length);
@@ -83,12 +81,10 @@ const creditName = () => {
 }
 
 const creditExpiration = () => {
-  const spanDate = document.querySelector('.cdate')
+  const spanDate = document.querySelector('.cdate');
 
   spanDate.innerText = infos.MONTH.value + '/' + infos.YEAR.value;
-  console.log(infos.MONTH.value);
-  console.log(infos.YEAR.value);
 }
 
-creditNumber()
-creditName()
+creditNumber();
+creditName();
